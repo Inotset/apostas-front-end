@@ -1,0 +1,55 @@
+<div class="fundoLogin">
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<button class="btn btn-danger ripple-effect fa fa-trophy" style="border-radius: 16px; font-size: 20px; color: yellow; float: right; margin-top: 5px;" type="submit" ng-click="ranking()"><span style="color: white;"> Ranking</span></button>
+</div>
+<div class="container">
+	<div id="login" class="signin-card" style="background-color: rgba(255, 255, 255, 0.81);">
+	  	<div class="logo-image">
+	  		<img src="/images/soccer.png" alt="Logo" class="rodarBola" title="Logo" width="138">
+	  	</div>
+	  	<h1 class="display1"><b>Rede de Apostas</b></h1>
+	  	<p class="subhead"></p>
+	  	<form id="loginForm" name="loginForm">
+	   		<div layout="row" id="form-login-username" class="form-group">
+	   			<label for="username" class="float-label">E-mail</label>
+				<div class="input-group">
+	   				<span class="input-group-addon" id="basic-addon1"><div class="fa fa-user"></div></span>
+	      			<input class="form-control" ng-model="email" name="username" type="text" alt="login" required/>
+	      		</div>
+	    	</div>
+	    	<div layout="row" id="form-login-password" class="form-group">
+	      		<label for="password" class="float-label">Senha</label>
+	      		<div class="input-group">
+			        <span class="input-group-addon" id="basic-addon1"><div class="fa fa-lock"></div></span>
+	      			<input class="form-control" ng-model="password" name="password" type="password" alt="password" required>
+	      		</div>
+	      		<div>
+			    	<p style="text-align: left;"><a href="#/novasenha">Esqueci minha senha</a></p>
+				</div>
+	    	</div>
+	    	<div>
+	      		<button class="btn btn-block btn-primary ripple-effect" type="submit" ng-click="login()">Login</button>
+		  	</div>
+		  	<div class="row" style="margin-top: 10px">
+				<div class="social-login col-lg-6 col-md-6 col-sm-6 col-xs-12" style="background-color: #49639F; text-align: center; margin-right: 24px; margin-bottom: 9px;">
+			    	<a ng-click="authenticate('facebook')">
+			        	<i class="fa fa-facebook fa-lg"></i> Login Facebook
+			      	</a>
+			    </div>
+			    <div class="social-login col-lg-5 col-md-5 col-sm-5 col-xs-12" style="background-color: #DF4A32; text-align: center;">
+			      	<a ng-click="authenticate('google')">
+			        	<i class="fa fa-google-plus fa-lg"></i> Login Google
+			      	</a>
+			    </div>
+			</div>
+		  	<div>
+				<p style="text-align: center; margin-top: 15px;">
+				    Não possui um usuário?
+				    <a href="#/novoUsuario" title="Cadastre-se agora">Cadastre-se agora</a>
+				</p>
+			</div>
+			
+		 </form>
+	</div>
+</div>

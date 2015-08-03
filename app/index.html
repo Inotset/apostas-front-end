@@ -1,0 +1,147 @@
+<!doctype html>
+<html class="no-js" ng-app="campoApp" ng-controller="ApplicationCtrl" style="background-color: white;">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dropdownmenu.css">
+    <link rel="stylesheet" href="styles/logincss.css">
+    <link rel="stylesheet" href="styles/grid.css">
+    <link rel="stylesheet" href="styles/painel-admin.css">
+    <link rel="stylesheet" href="bower_components/ngtoast/dist/ngToast.css" />
+    <link rel="stylesheet" href="styles/menu.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+  </head>
+  <body ng-controller="MainCtrl">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <toast>
+    </toast>
+
+    <div class="container-fluid" style="background-color: white;">
+
+	    <div ng-cloak ng-hide="showLoginDialog">
+	        <div class="container">
+                <nav>
+                    <ul class="mcd-menu" style="margin-top: -34px;">
+                        <li>
+                            <a href="" class="active">
+                                <i class="fa fa-home"></i>
+                                <strong>Início</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-trophy"></i>
+                                <strong>Torneios</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-star"></i>
+                                <strong>Apostas</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-list"></i>
+                                <strong>Classificação</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-user"></i>
+                                <strong>Minha Conta</strong>
+                            </a>
+                        </li>
+                        <li ng-show="admin">
+                            <a href="#/admin">
+                                <i class="fa fa-wrench"></i>
+                                <strong>Adm</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-click="logout()">
+                                <i class="fa fa-power-off"></i>
+                                <strong>Sair</strong>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="jumbotron" style="margin-top: 30px; background-color: rgba(173, 173, 173, 0.11);">
+                    <div ng-view="" id="content-wrapper"></div>
+                </div>
+            </div>
+	    </div>
+
+        <div ng-show="showLoginDialog"
+             style="position: fixed;
+                    z-index: 9000;
+                    width: calc(100%);
+                    height: calc(100%);
+                    background-color: white;">
+            <div ng-view="" id="content-wrapper">
+        </div>
+
+	</div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/ngtoast/dist/ngToast.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+    <script src="bower_components/ngFacebook/dev/src/unmin/ngFacebook.js"></script>
+    <script src="bower_components/satellizer/satellizer.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/application.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+
+        <script src="scripts/filter/filtroData.js"></script>
+        
+        <script src="scripts/services/login.js"></script>
+        <script src="scripts/services/toast.js"></script>
+        <script src="scripts/controllers/admin.js"></script>
+        <script src="scripts/services/admin.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
