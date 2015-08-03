@@ -1,16 +1,15 @@
 # apostas-front-end
 
-Passos ambiente de desenvolvimento:
-
-Download e Instalar node.js
-Download e Instalar GIT
-Download e Instalar Python 2
-WINDOWS: Download e Instalar RailsInstaller
-WINDOWS: Download e Instalar VisualStudio 2012
+Steps
+- Download e Instalar node.js
+- Download e Instalar GIT
+- Download e Instalar Python 2
+- WINDOWS: Download e Instalar RailsInstaller
+- WINDOWS: Download e Instalar VisualStudio 2012
 
 - 
 
-Cria um arquivo chamado whatever.rb com o script abaixo
+whatever.rb ->
 
 require 'net/http'
 
@@ -32,21 +31,21 @@ Net::HTTP.start("curl.haxx.se") do |http|
   end
 end
 
-executa o arquivo que voce criou:
+Execute:
 
 > ruby "whatever.rb"
 
-defina o cacert.pem baixado como certificado ssl
+cacert.pem certificado ssl
 
 > set SSL_CERT_FILE=C:\RailsInstaller\cacert.pem
 
-baixe o compass:
+Compass:
 
 > gem install compass
 
-Coloque a pasta C:\RailsInstaller\Ruby2.1.0\bin no path
+C:\RailsInstaller\Ruby2.1.0\bin / git / node / python -> path
 
-executar os comandos:
+Execute: 
 
 > npm install -g bower
 > npm install -g grunt-cli
@@ -58,15 +57,12 @@ Definir o VS12 como compilador de C do node-gyp
 > npm config set msvs_version 2012 --global
 
 ---------------
-verificar se o ambiente está OK
 
-CRIA um projeto com o generator-angular
 > yo angular teste
 Caso o projeto seja criado com sucesso
 > grunt
 > grunt serve
 
-definicao de variavel no ambiente
 
 mkdir angularTeste
 cd angularTeste
@@ -88,8 +84,6 @@ yo anguykar:directive mo-expandle
 Baixar o plugin pra apontar a porta para 9000 / 8080
 npm install connect-modrewrite --save-dev
 
-cria um modal no angular vnas 
 yo angular:directive modal
-
 
 bower install ng-cpf-cnpj --save
