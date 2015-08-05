@@ -57,49 +57,17 @@ var app = angular.module('campoApp',
 );
 
   app.config(function ($routeProvider, $httpProvider, $facebookProvider, $authProvider) {
-    $httpProvider.interceptors.push('ErrorInterceptor');
-
-    $authProvider.httpInterceptor = true; // Add Authorization header to HTTP request
-    $authProvider.loginOnSignup = true;
-    $authProvider.baseUrl = '/' // API Base URL for the paths below.
-    $authProvider.loginRedirect = '/';
-    $authProvider.logoutRedirect = '/';
-    $authProvider.signupRedirect = '/login';
-    $authProvider.loginUrl = '/auth/login';
-    $authProvider.signupUrl = '/auth/signup';
-    $authProvider.loginRoute = '/login';
-    $authProvider.signupRoute = '/signup';
-    $authProvider.tokenRoot = false; // set the token parent element if the token is not the JSON root
-    $authProvider.tokenName = 'token';
-    $authProvider.tokenPrefix = 'satellizer'; // Local Storage name prefix
-    $authProvider.unlinkUrl = '/auth/unlink/';
-    $authProvider.unlinkMethod = 'get';
-    $authProvider.authHeader = 'Authorization';
-    $authProvider.authToken = 'Bearer';
-    $authProvider.withCredentials = true;
-    $authProvider.platform = 'browser'; // or 'mobile'
-    $authProvider.storage = 'localStorage'; // or 'sessionStorage'
-
-    $facebookProvider.init(
-      {
-        appId: 'campoApp'
-      }
-    );
 
     $authProvider.facebook({
-      url: '/auth/facebook',
-      authorizationEndpoint: 'https://www.facebook.com/v2.3/dialog/oauth',
-      redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host + '/',
-      scope: 'email',
-      scopeDelimiter: ',',
-      requiredUrlParams: ['display', 'scope'],
-      display: 'popup',
-      type: '2.0',
-      popupOptions: { width: 481, height: 269 }
+      clientId: '6578543909778127'
     });
 
     $authProvider.google({
-      url: '/auth/google',
+      clientId: '136404311847-c1d3bo8alovde2lf6ijg42potlncqlo5.apps.googleusercontent.com'
+    });
+
+    $authProvider.google({
+      url: '/rest/open/auth/google',
       authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
       redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
       scope: ['profile', 'email'],
@@ -108,40 +76,25 @@ var app = angular.module('campoApp',
       requiredUrlParams: ['scope'],
       optionalUrlParams: ['display'],
       display: 'popup',
-      type: '2.0',
-      popupOptions: { width: 580, height: 400 }
-    });
-
-    $authProvider.linkedin({
-      url: '/auth/linkedin',
-      authorizationEndpoint: 'https://www.linkedin.com/uas/oauth2/authorization',
-      redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
-      requiredUrlParams: ['state'],
-      scope: [],
-      scopeDelimiter: ' ',
-      state: 'STATE',
-      type: '2.0',
-      popupOptions: { width: 527, height: 582 }
-    });
-
-    $authProvider.twitter({
-      url: '/auth/twitter',
-      type: '1.0',
-      popupOptions: { width: 495, height: 645 }
+      type: '2.0'
     });
 
     $routeProvider
-      .when('/login', {
+    .when('home', {
+        url: '/',
+        templateUrl: 'views/home.html'
+      })
+    .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
-      })
-      .when('/admin', {
+    })
+    .when('/admin', {
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl'
-      })
-      .otherwise(
+    })
+    .otherwise(
         {
           redirectTo: '/home'
         }
-      );
+    );
 });
