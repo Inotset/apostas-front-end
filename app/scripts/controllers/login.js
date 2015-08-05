@@ -32,7 +32,7 @@ angular.module('campoApp')
 			},
 			function(response){
 				if(response.status === 400) {
-					Toast.showToast(response.data.message, 'danger', 5000);					
+					Toast.showToast('Login ou senha inválidos', 'danger', 5000);
 				}
 				if(response.status === 500) {
 					Toast.showToast('Problema ao comunicar-se com o servidor!', 'danger', 5000);

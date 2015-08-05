@@ -7,11 +7,11 @@
 	 			</div>
 		  	</div>
 			<div ng-show="aberto" id="menu" ng-mouseleave="fechar()" style="margin-top: 10px; position: absolute; z-index: 100;">
-		    	<a ng-click="abrirOpcao(1)" 
-		    		style="border: solid 1px;">Usuários<i id="firstIcon" class="fa fa-user"></i></a>
-		    	<a ng-click="abrirOpcao(2)" class="borderOpcoes">Times<i id="secondIcon" class="fa fa-ra"></i></a>
-		    	<a ng-click="abrirOpcao(3)" class="borderOpcoes">Torneios<i id="thirdIcon" class="fa fa-trophy"></i></a>
-		    	<a ng-click="abrirOpcao(4)" class="borderOpcoes">Estatísticas<i id="thirdIcon" class="fa fa-bar-chart-o"></i></a>
+		    	<a href="" ng-click="abrirOpcao(1)" 
+		    		style="border: solid 1px;">Usuários<i id="firstIcon" class="fa fa-user" style="color: green;"></i></a>
+		    	<a href="" ng-click="abrirOpcao(2)" class="borderOpcoes">Times<i id="secondIcon" class="fa fa-ra" style="color: green;"></i></a>
+		    	<a href="" ng-click="abrirOpcao(3)" class="borderOpcoes">Torneios<i id="thirdIcon" class="fa fa-trophy" style="color: green;"></i></a>
+		    	<a href="" ng-click="abrirOpcao(4)" class="borderOpcoes">Estatísticas<i id="thirdIcon" class="fa fa-bar-chart-o" style="color: green;"></i></a>
 		  	</div>
 	  	</div>
   	</div>
@@ -40,7 +40,7 @@
 					<img class="filter" src="data:image/png;base64,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" />
 					</td>
 					<td>
-						<img src="" width="26" />
+						<img ng-src="{{usuario.imagemTime}}" width="30px" height="35px">
 					</td>
 					<td>
 						<a ng-click="">
@@ -59,34 +59,36 @@
 
 	<div class="container" ng-if="showTimes">
 		<div ng-controller="ModalTimeCtrl">
-	    		<script type="text/ng-template" id="myModalContent.html">
-			        <div class="modal-header">
-			            <h3 class="modal-title">Adicionar Time</h3>
+    		<div class='btAdicionar'>
+				<button class='pulse-button' ng-click="open('lg')">&plus;</button>
+			</div>
+    		<script type="text/ng-template" id="myModalContent.html">
+		        <div class="modal-header">
+		            <h3 class="modal-title">Adicionar Time</h3>
+		        </div>
+		        <form name="formTime">
+			        <div>
+			        	<div class="row">
+				            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="margin-top: 10px;">
+		                        <label id="labelName"> Nome do Time  </label> 
+		                        <input required name="nomeTime" id="nomeTime" for="labelName" type="text" class="form-control" ng-model="time.nome" required blur="formTime.nomeTime.$dirty = true"/>
+		                    </div>
+		                </div>
+		                <div class="row">
+				            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="margin-top: 10px;">
+		                        <label id="labelName"> Escudo  </label> 
+		                        <input id="asd" type="file" />
+		                        <img id="img" src="{{time.imagem}}" style="margin-top: 14px; width: 300px; height: 300px;" /> 
+		                    </div>
+		                </div>
 			        </div>
-			        <form name="formTime">
-				        <div>
-				        	<div class="row">
-					            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="margin-top: 10px;">
-			                        <label id="labelName"> Nome do Time  </label> 
-			                        <input required name="nomeTime" id="nomeTime" for="labelName" type="text" class="form-control" ng-model="time.nome" required blur="formTime.nomeTime.$dirty = true"/>
-			                    </div>
-			                </div>
-			                <div class="row">
-					            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="margin-top: 10px;">
-			                        <label id="labelName"> Escudo  </label> 
-			                        <input id="asd" type="file" />
-			                        <img id="img" src="{{time.imagem}}" style="width: 150px; height: 150px;" /> 
-			                    </div>
-			                </div>
-				        </div>
-				        <div class="modal-footer">
-				            <button class="btn btn-success" ng-click="salvarTime()">Salvar</button>
-				            <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
-				        </div>
-				    </div>
-	    		</script>
-	    		<button class="btn btn-primary" ng-click="open('lg')">Adicionar</button>
-	    	</div>
+			        <div class="modal-footer">
+			            <button class="btn btn-success" ng-click="salvarTime()">Salvar</button>
+			            <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+			        </div>
+			    </div>
+    		</script>
+	    </div>
 		<table class="rules">
 			<thead>
 				<tr>

@@ -88,14 +88,14 @@ h1 a {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000378}}
 #menu a {
   display: block;
-  background: #F8F8F8;
+  background: rgba(201, 255, 201, 0.51);
   width: 240px;
   height: 40px;
   padding: 0 0 0 10px;
   font: bold 13px Helvetica, sans-serif;
   text-transform: uppercase;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.4);
+  color: #0F6708;
   line-height: 40px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
@@ -115,14 +115,15 @@ h1 a {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003102}}
 #menu a:hover {
   color: #555;
+  background: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003107}}
 #menu a:hover > .fa {
   color: #555;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003111}}
 #firstIcon,
 #secondIcon,
 #thirdIcon,
@@ -135,27 +136,27 @@ h1 a {
   opacity: 0.7;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003123}}
 #firstIcon {
   margin-right: 14px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003127}}
 #secondIcon {
   margin-right: 11px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003131}}
 #thirdIcon {
   margin-right: 11px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003135}}
 #fourthIcon {
   margin-right: 13px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003139}}
 #arrow {
   width: 0;
   height: 0;
@@ -165,9 +166,59 @@ h1 a {
   margin-left: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003148}}
 .borderOpcoes {
   border-left: solid 1px;
   border-right: solid 1px;
   border-bottom: solid 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003154}}
+.btAdicionar {
+  /* width: 200px;
+  height: 100%; */
+  float: left;
+  margin: 0 auto 0;
+  margin-left: 21px;
+  margin-bottom: 12px;
+  margin-top: -34px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003164}}
+.pulse-button {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  width: 36px;
+  height: 36px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 0 0 #f0f0f0, 0 0 0 0 rgba(99, 212, 90, 0.7);
+  border-radius: 100%;
+  v-align: middle;
+  background: rgba(38, 158, 43, 0.9);
+  cursor: pointer;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0.33, 0, 1);
+          animation: pulse 1.25s infinite cubic-bezier(0.66, 0.33, 0, 1);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003183}}
+.pulse-button:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+@-webkit-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 12px transparent, 0 0 0 24px rgba(90, 153, 212, 0);
+  }
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 12px transparent, 0 0 0 24px rgba(90, 153, 212, 0);
+  }
 }
