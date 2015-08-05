@@ -10,7 +10,7 @@ Criar arquivo de acordo com o código abaixo ("teste.rb"):
 
 require 'net/http'
 
-# create a path to the file "C:\RailsInstaller\cacert.pem"
+create a path to the file "C:\RailsInstaller\cacert.pem"
 cacert_file = File.join(%w{c: RailsInstaller cacert.pem})
 
 Net::HTTP.start("curl.haxx.se") do |http|
@@ -96,7 +96,7 @@ bower install satellizer
 
 ou
 
-# NPM
+NPM
 npm install satellizer
 
 Injetar no app:
