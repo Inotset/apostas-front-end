@@ -48,39 +48,7 @@ angular.module('campoApp')
 		          break;
 		    case 2:
 		          $scope.showTimes = true;
-                    $scope.times = Time.query(
-                         {},
-                         function(data){
-                              $scope.timesEdt = [];
-                              
-                              for (var dado in data){
-                                   $scope.novo = data[dado].imagem;
-                                   $scope.strImagem = '';
-
-                                   if (dado === '$promise' || dado === '$resolved'){
-                                        break;
-                                   }
-
-                                   for (var caractereLinha in $scope.novo){    
-                                        if (caractereLinha === '$promise' || caractereLinha === '$resolved'){
-                                             break;
-                                        }
-                                             
-                                        $scope.strImagem += $scope.novo[caractereLinha].replace('\\','=');
-                                   }
-
-                                  $scope.logoMenuString = null;
-                                  $scope.logoMenuString = $scope.strImagem.substring(1,($scope.strImagem.length - 1));
-                                  $scope.logoMenuString = $scope.logoMenuString.replace(/u003d/g,'');
-
-                                  $scope.obj = {};
-                                  $scope.obj.nome = data[dado].nome;
-                                  $scope.obj.logo = $scope.logoMenuString;
-
-                                  $scope.timesEdt.push($scope.obj);
-                              }
-                         }
-                    );
+                    $scope.times = Time.query();
       		    break;
 
       		    case 3:
@@ -172,7 +140,7 @@ angular.module('campoApp')
 });
 
  angular.module('campoApp')
-  .controller('ModalInstanceCtrl', function ($resource, FileUploader, $scope, Usuario, $modalInstance, items, Time) {
+  .controller('ModalInstanceCtrl', function ($resource, FileUploader, $scope, Usuario, $modalInstance, items, Time, $timeout) {
 
   $scope.time = new Time();
   $scope.uploader = new FileUploader();
@@ -184,15 +152,31 @@ angular.module('campoApp')
 	};
 
 	$scope.salvarTime = function () {
-    $scope.time.$save(
-      {
-        'imagem': $scope.uploader.queue[0].file
-      }
-    );
 
-		$modalInstance.dismiss('cancel');
+        $scope.time.$save();
+        $modalInstance.dismiss('cancel');
 	};
 
+    function el(id){
+        return document.getElementById(id);
+    };
+
+    function readImage() {
+        if (this.files && this.files[0] ) {
+            var fr = new FileReader();
+            fr.onload = function(e) {
+                   el('img').src = e.target.result;
+                   $scope.time.imagem = e.target.result;
+            };       
+            fr.readAsDataURL(this.files[0]);
+        }
+    };
+
+    $timeout(function() {
+            el('asd').addEventListener('change', readImage, false);
+        }
+    );
+    
 	$scope.cancel = function () {
 		$modalInstance.dismiss('cancel');
 	};
