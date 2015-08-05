@@ -8,7 +8,7 @@
  * Controller of the campoApp
  */
 angular.module('campoApp')
-  .controller('LoginCtrl', function ($scope, Login, $cookieStore, Toast, $location, $facebook, $auth) {
+  .controller('LoginCtrl', function ($scope, Login, $cookieStore, Toast, $location, $facebook, $auth, $rootScope) {
 
   	if($cookieStore.get('sessionId')) {
 		$location.path('/');
@@ -41,24 +41,15 @@ angular.module('campoApp')
 		);
 	};
 
-	
-
 	$scope.authenticate = function(provider) {
-      $auth.authenticate(provider);
-    };
 
-	/*$scope.loginFacebook = function() {
-		$facebook.login(
-			{
-				scope:'email'
-			}
-		).then(function(response) {
-			console.log(response);
-		},
-		function(response) {
-			console.log("Error!", response);
-		});
-	};*/
+    $auth.authenticate(provider).then(function(response) {
+          console.log(response);
+        })
+        .catch(function(response) {
+          console.log(response);
+        });
+    };
 
 	$scope.novaSenha = function() {
 		$rootScope.novoLogin = true;
