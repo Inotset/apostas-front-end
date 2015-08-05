@@ -1,15 +1,12 @@
-# apostas-front-end
+# Configuração
 
-Steps
 - Download e Instalar node.js
 - Download e Instalar GIT
 - Download e Instalar Python 2
 - WINDOWS: Download e Instalar RailsInstaller
 - WINDOWS: Download e Instalar VisualStudio 2012
 
-- 
-
-whatever.rb ->
+Criar arquivo de acordo com o código abaixo ("teste.rb"):
 
 require 'net/http'
 
@@ -33,7 +30,7 @@ end
 
 Execute:
 
-> ruby "whatever.rb"
+> ruby "teste.rb"
 
 cacert.pem certificado ssl
 
@@ -87,3 +84,80 @@ npm install connect-modrewrite --save-dev
 yo angular:directive modal
 
 bower install ng-cpf-cnpj --save
+
+------------------------------------------
+Configuração para autenticação Google
+------------------------------------------
+Antes de mais nada, é necessário obter as credenciais para o seu projeto:
+(https://oneminutedistraction.wordpress.com/2014/04/29/using-oauth-for-your-javaee-login/)
+
+# Bower
+bower install satellizer
+
+ou
+
+# NPM
+npm install satellizer
+
+Injetar no app:
+
+angular.module('MyApp', ['satellizer'])
+  .config(function($authProvider) {
+  
+    $authProvider.google({
+      clientId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com'
+    });
+    
+    
+Controller:
+
+ngular.module('MyApp')
+  .controller('LoginCtrl', function($scope, $auth) {
+
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
+    };
+
+  });
+
+HTML:
+
+<button ng-click="authenticate('google')">Sign in with Google</button>
+
+Configurações opcionais:
+
+$authProvider.httpInterceptor = true; // Add Authorization header to HTTP request
+$authProvider.loginOnSignup = true;
+$authProvider.baseUrl = '/' // API Base URL for the paths below.
+$authProvider.loginRedirect = '/';
+$authProvider.logoutRedirect = '/';
+$authProvider.signupRedirect = '/login';
+$authProvider.loginUrl = '/auth/login';
+$authProvider.signupUrl = '/auth/signup';
+$authProvider.loginRoute = '/login';
+$authProvider.signupRoute = '/signup';
+$authProvider.tokenRoot = false; // set the token parent element if the token is not the JSON root
+$authProvider.tokenName = 'token';
+$authProvider.tokenPrefix = 'satellizer'; // Local Storage name prefix
+$authProvider.unlinkUrl = '/auth/unlink/';
+$authProvider.unlinkMethod = 'get';
+$authProvider.authHeader = 'Authorization';
+$authProvider.authToken = 'Bearer';
+$authProvider.withCredentials = true;
+$authProvider.platform = 'browser'; // or 'mobile'
+$authProvider.storage = 'localStorage'; // or 'sessionStorage'
+
+// Google
+$authProvider.google({
+  url: '/auth/google',
+  authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
+  redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
+  scope: ['profile', 'email'],
+  scopePrefix: 'openid',
+  scopeDelimiter: ' ',
+  requiredUrlParams: ['scope'],
+  optionalUrlParams: ['display'],
+  display: 'popup',
+  type: '2.0',
+  popupOptions: { width: 580, height: 400 }
+});
