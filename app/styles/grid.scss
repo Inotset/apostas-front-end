@@ -96,9 +96,9 @@ table thead tr th {
   background: -webkit-linear-gradient(top, #e9eaec 1%, #dee2e8 100%);
   background: -o-linear-gradient(top, #e9eaec 1%, #dee2e8 100%);
   background: -ms-linear-gradient(top, #e9eaec 1%, #dee2e8 100%);
-  background: linear-gradient(to bottom, #e9eaec 1%, #dee2e8 100%);
-  color: #9c9c9c;
-  border-color: #b7b7b7;
+  background: linear-gradient(to bottom, rgba(203, 203, 204, 0.09) 1%, rgba(215, 255, 212, 0.54) 100%);
+  color: rgb(47, 93, 17);
+  border-color: rgba(6, 72, 28, 0.21);
   font: normal normal bold 0.8em/1.5 sans-serif;
   text-shadow: 0 1px #fff;
 }
