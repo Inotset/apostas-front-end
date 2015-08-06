@@ -3,32 +3,9 @@
 angular.module('campoApp')
   .controller('AdminCtrl', function ($resource, $scope, Usuario, $modal, Time, Torneio) {
 
-  	$scope.aberto = false;
-  	$scope.usuarios = [];
-
-  	$scope.open = function (size) {
-
-    var modalInstance = $modal.open({
-      animation: $scope.animationsEnabled,
-      templateUrl: 'myModalContent.html',
-      controller: 'ModalInstanceCtrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-    });
-  };
-
-  $scope.toggleAnimation = function () {
-    $scope.animationsEnabled = !$scope.animationsEnabled;
-  };
+     $scope.time = new Time();
+     $scope.aberto = false;
+     $scope.usuarios = [];
 
   	$scope.abrir = function(){
   		$scope.aberto = true;
@@ -40,126 +17,89 @@ angular.module('campoApp')
 
   	$scope.abrirOpcao = function(opcao) {
   		$scope.desabilitarTodos();
-
   		switch(opcao) {
-		    case 1:
+		     case 1:
 		          $scope.showUsuarios = true;
 		          $scope.usuarios = Usuario.query();
 		          break;
-		    case 2:
-		          $scope.showTimes = true;
+		     case 2:
+                    $scope.showTimes = true;
                     $scope.times = Time.query();
-      		    break;
-
-      		    case 3:
-      		        $scope.showTorneios = true;
-                       $scope.torneios = Torneio.query(
-                         {},
-                         function(data){
-                              $scope.torneiosEdt = [];
-                              
-                              for (var dado in data){
-                                   $scope.novo = data[dado].imagem;
-                                   $scope.strImagem = '';
-
-                                   if (dado === '$promise' || dado === '$resolved'){
-                                        break;
-                                   }
-
-                                   for (var caractereLinha in $scope.novo){    
-                                        if (caractereLinha === '$promise' || caractereLinha === '$resolved'){
-                                             break;
-                                        }
-                                             
-                                        $scope.strImagem += $scope.novo[caractereLinha].replace('\\','=');
-                                   }
-
-                                  $scope.logoMenuString = null;
-                                  $scope.logoMenuString = $scope.strImagem.substring(1,($scope.strImagem.length - 1));
-                                  $scope.logoMenuString = $scope.logoMenuString.replace(/u003d/g,'');
-
-                                  $scope.obj = {};
-                                  $scope.obj.nome = data[dado].nome;
-                                  $scope.obj.logo = $scope.logoMenuString;
-
-                                  $scope.torneiosEdt.push($scope.obj);
-                              }
-                         }
-                    );
-      		        break;
-      		    case 4:
-      		        $scope.showEstatisticas = true;
-      		        break;
-      		    default:
-      		        $scope.desabilitarTodos();
+      		     break;
+		     case 3:
+                    $scope.showTorneios = true;
+                    $scope.torneios = Torneio.query();
+                    break;
+		     case 4:
+                    $scope.showEstatisticas = true;
+                    break;
+		     default:
+                    $scope.desabilitarTodos();
 		}
   	};
+
+     $scope.setSelected = function(time){
+          $scope.selected = time;
+     };
+
+     $scope.excluirTime = function(time){
+          time.$delete(
+               {
+                    oid: time.oid
+               },
+               function(data){
+                    $scope.times = Time.query();
+               }
+          );
+     };
 
   	$scope.desabilitarTodos = function(){
 	  	$scope.showUsuarios = false;
 	  	$scope.showTimes = false;
 	  	$scope.showTorneios = false;
 	  	$scope.showEstatisticas = false;
-  	}
+  	};
 
   	$scope.desabilitarTodos();
 
 });
 
-angular.module('campoApp')
-  .controller('ModalTimeCtrl', function ($resource, $scope, Usuario, $modal) {
+angular.module('campoApp').controller('ModalTimeCtrl', function ($resource, $scope, Usuario, $modal) {
 
-  $scope.items = ['item1', 'item2', 'item3'];
+     $scope.animationsEnabled = true;
 
-  $scope.animationsEnabled = true;
+     $scope.openTimes = function (size) {
+          var modalInstance = $modal.open(
+               {
+                    animation: $scope.animationsEnabled,
+                    templateUrl: 'myModalContent.html',
+                    controller: 'ModalInstanceCtrl',
+                    size: size
+               }
+          );
 
-  $scope.open = function (size) {
-
-    var modalInstance = $modal.open({
-      animation: $scope.animationsEnabled,
-      templateUrl: 'myModalContent.html',
-      controller: 'ModalInstanceCtrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-    });
-  };
-
-  $scope.toggleAnimation = function () {
-    $scope.animationsEnabled = !$scope.animationsEnabled;
-  };
+          modalInstance.result.then(function (selectedItem) {
+               $scope.selected = selectedItem;
+          }, function () {
+          });
+     };
 
 });
 
  angular.module('campoApp')
-  .controller('ModalInstanceCtrl', function ($resource, FileUploader, $scope, Usuario, $modalInstance, items, Time, $timeout) {
+  .controller('ModalInstanceCtrl', function ($resource, FileUploader, $scope, Usuario, $modalInstance, Time, $timeout) {
 
-  $scope.time = new Time();
-  $scope.uploader = new FileUploader();
+     $scope.time = new Time();
+     $scope.uploader = new FileUploader();
 
-	$scope.items = items;
-
-	$scope.selected = {
-		item: $scope.items[0]
-	};
-
-	$scope.salvarTime = function () {
-
-        $scope.time.$save();
-        $modalInstance.dismiss('cancel');
+     $scope.salvarTime = function () {
+          $scope.time.$save();
+          $modalInstance.dismiss('cancel');
 	};
 
     function el(id){
         return document.getElementById(id);
-    };
+    }
 
     function readImage() {
         if (this.files && this.files[0] ) {
@@ -170,12 +110,12 @@ angular.module('campoApp')
             };       
             fr.readAsDataURL(this.files[0]);
         }
-    };
+    }
 
-    $timeout(function() {
-            el('asd').addEventListener('change', readImage, false);
-        }
-    );
+     $timeout(function() {
+               el('asd').addEventListener('change', readImage, false);
+          }
+     );
     
 	$scope.cancel = function () {
 		$modalInstance.dismiss('cancel');
