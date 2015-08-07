@@ -23,18 +23,18 @@ angular.module('campoApp')
 		          $scope.usuarios = Usuario.query();
 		          break;
 		     case 2:
-                    $scope.showTimes = true;
-                    $scope.times = Time.query();
-      		     break;
+              $scope.showTimes = true;
+              $scope.times = Time.query();
+      		    break;
 		     case 3:
-                    $scope.showTorneios = true;
-                    $scope.torneios = Torneio.query();
-                    break;
+              $scope.showTorneios = true;
+              $scope.torneios = Torneio.query();
+              break;
 		     case 4:
-                    $scope.showEstatisticas = true;
-                    break;
+              $scope.showEstatisticas = true;
+              break;
 		     default:
-                    $scope.desabilitarTodos();
+              $scope.desabilitarTodos();
 		}
   	};
 

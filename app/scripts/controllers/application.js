@@ -14,6 +14,10 @@ angular.module('campoApp')
 	$rootScope.$on('$routeChangeSuccess', function () {
 		$scope.showLoginDialog = !$cookieStore.get('sessionId');
 
+		if ($location.$$url === '/cadastro') {
+    		return;
+    	}
+
 		if(!$cookieStore.get('sessionId')) {
 			if($rootScope.novoLogin) {
 				$location.path('/login/home');
@@ -22,28 +26,6 @@ angular.module('campoApp')
 			}
 		} else {
 			$scope.admin = $cookieStore.get('admin');
-			/*
-			$scope.usuarioIndex = Usuario.get({
-				oid: $cookieStore.get('userId')
-			});
-			if (!$rootScope.usuarioLogado) {
-				$rootScope.usuarioLogado = Usuario.get({'oid':$cookieStore.get('userId')});
-			}
-			$scope.usuario = $rootScope.usuarioLogado;
-
-			if($cookieStore.get('nome')){
-				$scope.conta = {};
-				$scope.conta.nome = $cookieStore.get('nome');
-				$scope.conta.sessionId = $cookieStore.get('sessionId');
-				$scope.conta.userId = $cookieStore.get('userId');
-				$scope.conta.nivel = $cookieStore.get('userNivel');
-			}
-			
-		    $scope.notificacao = false;
-    		$scope.mostrarNotificacao = false;
-
-    		$rootScope.$broadcast('verificarNotificacao');
-		*/
 		}
 	});
 

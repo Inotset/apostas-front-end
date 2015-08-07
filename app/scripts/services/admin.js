@@ -3,7 +3,7 @@
 var campoServices = angular.module('campoApp');
 
 campoServices.factory('Usuario', function ($resource) {
-    var resource = $resource('rest/restricted/usuarios/:oid', 
+    var resource = $resource('rest/open/usuarios/:oid', 
         {
           oid : '@oid'
         }
