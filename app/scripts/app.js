@@ -92,6 +92,10 @@ var app = angular.module('campoApp',
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl'
     })
+    .when('/cadastro', {
+      templateUrl: 'views/cadastro.html',
+      controller: 'CadastroCtrl'
+    })
     .otherwise(
         {
           redirectTo: '/home'
