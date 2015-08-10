@@ -92,6 +92,18 @@ var app = angular.module('campoApp',
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl'
     })
+    .when('/admin/usuarios', {
+      templateUrl: 'views/usuarios.html',
+      controller: 'UsuariosCtrl'
+    })
+    .when('/admin/times', {
+      templateUrl: 'views/times.html',
+      controller: 'TimesCtrl'
+    })
+    .when('/admin/torneios', {
+      templateUrl: 'views/torneios.html',
+      controller: 'TorneiosCtrl'
+    })
     .when('/cadastro', {
       templateUrl: 'views/cadastro.html',
       controller: 'CadastroCtrl'
