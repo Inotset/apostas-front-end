@@ -8,7 +8,7 @@
  * Controller of the campoApp
  */
 
-angular.module('campoApp').controller('TorneiosCtrl', function ($resource, $scope, Torneio, $modal) {
+angular.module('campoApp').controller('TorneiosCtrl', function ($resource, $scope, Torneio, $modal, $location) {
 
 	$scope.torneio = new Torneio();
   	$scope.torneios = Torneio.query();
@@ -25,7 +25,7 @@ angular.module('campoApp').controller('TorneiosCtrl', function ($resource, $scop
 	};
 
 	$scope.adicionarRodada = function(torneio){
-		
+		$location.path('/admin/torneios/' + torneio.oid);
 	};
 
     $scope.openTorneios = function (size) {
