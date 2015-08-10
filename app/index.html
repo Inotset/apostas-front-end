@@ -37,44 +37,44 @@
 	        <div class="container">
                 <nav>
                     <ul class="mcd-menu" style="margin-top: -34px;">
-                        <li>
-                            <a href="" class="active">
+                        <li ng-click="click(1)">
+                            <a href="#" ng-class="inicio">
                                 <i class="fa fa-home"></i>
                                 <strong>Início</strong>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
+                        <li ng-click="click(2)">
+                            <a href="#" ng-class="torneios">
                                 <i class="fa fa-trophy"></i>
                                 <strong>Torneios</strong>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
+                        <li ng-click="click(3)">
+                            <a href="#" ng-class="apostas">
                                 <i class="fa fa-star"></i>
                                 <strong>Apostas</strong>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
+                        <li ng-click="click(4)">
+                            <a href="#" ng-class="classificacao">
                                 <i class="fa fa-list"></i>
                                 <strong>Classificação</strong>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
+                        <li ng-click="click(5)">
+                            <a href="#" ng-class="minhaConta">
                                 <i class="fa fa-user"></i>
                                 <strong>Minha Conta</strong>
                             </a>
                         </li>
-                        <li ng-show="admin">
-                            <a href="#/admin">
+                        <li ng-click="click(6)" ng-show="admin">
+                            <a href="#/admin" ng-class="adm">
                                 <i class="fa fa-wrench"></i>
                                 <strong>Adm</strong>
                             </a>
                         </li>
                         <li>
-                            <a ng-click="logout()">
+                            <a ng-click="logout()" ng-class="">
                                 <i class="fa fa-power-off"></i>
                                 <strong>Sair</strong>
                             </a>

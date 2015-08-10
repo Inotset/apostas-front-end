@@ -29,7 +29,48 @@ angular.module('campoApp')
 		}
 	});
 
+	$scope.inicio = 'active';
+
+	$scope.click = function(opcao){
+
+		$scope.inicio = '';
+		$scope.torneios = '';
+		$scope.apostas = '';
+		$scope.classificacao = '';
+		$scope.minhaConta = '';
+		$scope.adm = '';
+
+		switch(opcao) {
+		    case 1:
+		    	$scope.inicio = 'active';
+		     	break;
+		    case 2:
+		    	$scope.torneios = 'active';
+      		    break;
+		    case 3:
+		    	$scope.apostas = 'active';
+              	break;
+		    case 4:
+		    	$scope.classificacao = 'active';
+              	break;
+            case 5:
+            	$scope.minhaConta = 'active';
+              	break;
+            case 6:
+            	$scope.adm = 'active';
+              	break;
+		    default:
+              	break;
+		}
+	};
+
 	$scope.logout = function() {
+		$scope.inicio = 'active';
+		$scope.torneios = '';
+		$scope.apostas = '';
+		$scope.classificacao = '';
+		$scope.minhaConta = '';
+		$scope.adm = '';
 		$rootScope.usuarioLogado = null;
 		$cookieStore.remove('sessionId');
 		$location.path('/login');
