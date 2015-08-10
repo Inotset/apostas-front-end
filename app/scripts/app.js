@@ -104,6 +104,14 @@ var app = angular.module('campoApp',
       templateUrl: 'views/torneios.html',
       controller: 'TorneiosCtrl'
     })
+    .when('/admin/torneios/:oid', {
+      templateUrl: 'views/rodadas.html',
+      controller: 'RodadasCtrl'
+    })
+    .when('/admin/torneios/:oid/nova-rodada', {
+      templateUrl: 'views/nova-rodada.html',
+      controller: 'NovaRodadaCtrl'
+    })
     .when('/cadastro', {
       templateUrl: 'views/cadastro.html',
       controller: 'CadastroCtrl'
