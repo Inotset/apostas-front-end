@@ -29,7 +29,29 @@ angular.module('campoApp')
 		}
 	});
 
-	$scope.inicio = 'active';
+	$scope.inicio = '';
+	$scope.torneios = '';
+	$scope.apostas = '';
+	$scope.classificacao = '';
+	$scope.minhaConta = '';
+	$scope.adm = '';
+	
+	if ($location.$$url === '/home'){
+		$scope.inicio = 'active';
+	} else if ($location.$$url === '/torneios'){
+		$scope.torneios = 'active';
+	} else if ($location.$$url === '/apostas'){
+		$scope.apostas = 'active';
+	} else if ($location.$$url === '/classificacao'){
+		$scope.classificacao = 'active';
+	} else if ($location.$$url === '/minhaConta'){
+		$scope.minhaConta = 'active';
+	} else if ($location.$$url === '/adm'){
+		$scope.adm = 'active';
+	}
+
+	if(!$cookieStore.get('sessionId')) {
+	}
 
 	$scope.click = function(opcao){
 
