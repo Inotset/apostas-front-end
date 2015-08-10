@@ -24,6 +24,10 @@ angular.module('campoApp').controller('TorneiosCtrl', function ($resource, $scop
 		);
 	};
 
+	$scope.adicionarRodada = function(torneio){
+		
+	};
+
     $scope.openTorneios = function (size) {
         var modalInstance = $modal.open(
             {
