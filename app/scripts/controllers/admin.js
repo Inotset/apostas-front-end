@@ -47,8 +47,19 @@ angular.module('campoApp')
                {
                     oid: time.oid
                },
-               function(data){
+               function(){
                     $scope.times = Time.query();
+               }
+          );
+     };
+
+     $scope.excluirTorneio = function(torneio){
+          torneio.$delete(
+               {
+                    oid: torneio.oid
+               },
+               function(){
+                    $scope.torneios = Torneio.query();
                }
           );
      };
@@ -72,8 +83,8 @@ angular.module('campoApp').controller('ModalTimeCtrl', function ($resource, $sco
           var modalInstance = $modal.open(
                {
                     animation: $scope.animationsEnabled,
-                    templateUrl: 'myModalContent.html',
-                    controller: 'ModalInstanceCtrl',
+                    templateUrl: 'myModalTime.html',
+                    controller: 'ModalInstanceTimeCtrl',
                     size: size
                }
           );
@@ -87,7 +98,7 @@ angular.module('campoApp').controller('ModalTimeCtrl', function ($resource, $sco
 });
 
  angular.module('campoApp')
-  .controller('ModalInstanceCtrl', function ($resource, FileUploader, $scope, Usuario, $modalInstance, Time, $timeout) {
+  .controller('ModalInstanceTimeCtrl', function ($resource, FileUploader, $scope, $modalInstance, Time, $timeout) {
 
      $scope.time = new Time();
      $scope.uploader = new FileUploader();
@@ -120,5 +131,64 @@ angular.module('campoApp').controller('ModalTimeCtrl', function ($resource, $sco
 	$scope.cancel = function () {
 		$modalInstance.dismiss('cancel');
 	};
+
+});
+
+angular.module('campoApp').controller('ModalTorneioCtrl', function ($resource, $scope, Torneio, $modal) {
+
+     $scope.animationsEnabled = true;
+
+     $scope.openTorneios = function (size) {
+          var modalInstance = $modal.open(
+               {
+                    animation: $scope.animationsEnabled,
+                    templateUrl: 'myModalTorneio.html',
+                    controller: 'ModalInstanceTorneioCtrl',
+                    size: size
+               }
+          );
+
+          modalInstance.result.then(function (selectedItem) {
+               $scope.selected = selectedItem;
+          }, function () {
+          });
+     };
+
+});
+
+ angular.module('campoApp')
+  .controller('ModalInstanceTorneioCtrl', function ($resource, FileUploader, $scope, $modalInstance, Torneio, $timeout) {
+
+     $scope.torneio = new Torneio();
+     $scope.uploader = new FileUploader();
+
+     $scope.salvarTorneio = function () {
+          $scope.torneio.$save();
+          $modalInstance.dismiss('cancel');
+  };
+
+    function el(id){
+        return document.getElementById(id);
+    }
+
+    function readImage() {
+        if (this.files && this.files[0] ) {
+            var fr = new FileReader();
+            fr.onload = function(e) {
+                   el('img').src = e.target.result;
+                   $scope.torneio.imagem = e.target.result;
+            };       
+            fr.readAsDataURL(this.files[0]);
+        }
+    }
+
+     $timeout(function() {
+               el('asd').addEventListener('change', readImage, false);
+          }
+     );
+    
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 
 });
