@@ -1,223 +1,53 @@
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300");
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\000032}}
-* {
-  margin: 0;
-  padding: 0;
-}
+/*
+Error: Invalid CSS after "  margin: 0 auto 0": expected "{", was ";"
+        on line 158 of C:/Users/gabriel/workspace/apostas-front-end/app/styles/dropdownmenu.scss
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\000037}}
-html {
-  background: #C7B7A7 url(http://www.jeplaa.site50.net/images/background1.png);
-  height: 100%;
-  -webkit-tap-highlight-color: transparent;
-}
+153: 
+154: .btAdicionar {
+155:   /* width: 200px;
+156:   height: 100%; *\/
+157:   float: left; *\/
+158:   margin: 0 auto 0;
+159:   margin-bottom: 12px;
+160:   margin-top: -34px;
+161: }
+162: 
+163: .pulse-button {
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000313}}
-h1 {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  margin-top: 15px;
-  text-align: center;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000320}}
-h1 a {
-  color: #888;
-  text-decoration: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000325}}
-.content {
-  /* position: relative;
-  top: 30px;
-  width: 250px;
-  margin: 0 auto; */
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000332}}
-#admin {
-  background: #F8F8F8;
-  /*width: 45px;
-  height: 40px;
-  */
-  color: #888;
-  border: none;
-  border-radius: 10px;
-  padding: 0 0 0 10px;
-  font: bold 13px Helvetica, sans-serif;
-  text-transform: uppercase;
-  line-height: 40px;
-  cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  font-size: 26px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000354}}
-#settings {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px 14px 0 0;
-  border: none;
-  outline: none;
-  color: #888;
-  font-size: 20px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000365}}
-#admin_text,
-#settings {
-  /* cursor: pointer; */
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000370}}
-#settings:hover {
-  color: #555;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000374}}
-#menu {
-  /* display: none; */
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000378}}
-#menu a {
-  display: block;
-  background: rgba(201, 255, 201, 0.51);
-  width: 240px;
-  height: 40px;
-  padding: 0 0 0 10px;
-  font: bold 13px Helvetica, sans-serif;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #0F6708;
-  line-height: 40px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000392}}
-#menu a:nth-child(2) {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\0000397}}
-#menu a:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003102}}
-#menu a:hover {
-  color: #555;
-  background: white;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003107}}
-#menu a:hover > .fa {
-  color: #555;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003111}}
-#firstIcon,
-#secondIcon,
-#thirdIcon,
-#fourthIcon {
-  position: absolute;
-  margin-top: 10px;
-  right: 0;
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.4);
-  opacity: 0.7;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003123}}
-#firstIcon {
-  margin-right: 14px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003127}}
-#secondIcon {
-  margin-right: 11px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003131}}
-#thirdIcon {
-  margin-right: 11px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003135}}
-#fourthIcon {
-  margin-right: 13px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003139}}
-#arrow {
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 9px solid #F8F8F8;
-  margin-left: 15px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003148}}
-.borderOpcoes {
-  border-left: solid 1px;
-  border-right: solid 1px;
-  border-bottom: solid 1px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003154}}
-.btAdicionar {
-  /* width: 200px;
-  height: 100%; */
-  float: left;
-  margin: 0 auto 0;
-  margin-bottom: 12px;
-  margin-top: -34px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003163}}
-.pulse-button {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  width: 36px;
-  height: 36px;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #fff;
-  border: none;
-  box-shadow: 0 0 0 0 #f0f0f0, 0 0 0 0 rgba(99, 212, 90, 0.7);
-  border-radius: 100%;
-  v-align: middle;
-  background: rgba(38, 158, 43, 0.9);
-  cursor: pointer;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0.33, 0, 1);
-          animation: pulse 1.25s infinite cubic-bezier(0.66, 0.33, 0, 1);
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/dropdownmenu\.scss}line{font-family:\00003182}}
-.pulse-button:hover {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-
-@-webkit-keyframes pulse {
-  to {
-    box-shadow: 0 0 0 12px transparent, 0 0 0 24px rgba(90, 153, 212, 0);
-  }
-}
-
-@keyframes pulse {
-  to {
-    box-shadow: 0 0 0 12px transparent, 0 0 0 24px rgba(90, 153, 212, 0);
-  }
-}
+Backtrace:
+C:/Users/gabriel/workspace/apostas-front-end/app/styles/dropdownmenu.scss:158
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1165:in `expected'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1101:in `expected'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1096:in `tok!'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:641:in `block'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:661:in `block_child'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:642:in `block'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:635:in `ruleset'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:660:in `block_child'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:117:in `stylesheet'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:42:in `parse'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/engine.rb:393:in `_to_tree'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/engine.rb:268:in `render'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/bin/compass:44:in `call'
+C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
+C:/RailsInstaller/Ruby2.1.0/bin/compass:23:in `load'
+C:/RailsInstaller/Ruby2.1.0/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"  margin: 0 auto 0\": expected \"{\", was \";\"\A         on line 158 of C:/Users/gabriel/workspace/apostas-front-end/app/styles/dropdownmenu.scss\A \A 153: \A 154: .btAdicionar {\A 155:   /* width: 200px;\A 156:   height: 100%; */\A 157:   float: left; */\A 158:   margin: 0 auto 0;\A 159:   margin-bottom: 12px;\A 160:   margin-top: -34px;\A 161: }\A 162: \A 163: .pulse-button {"; }

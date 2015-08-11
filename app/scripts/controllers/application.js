@@ -38,6 +38,7 @@ angular.module('campoApp')
 	
 	if ($location.$$url === '/home'){
 		$scope.inicio = 'active';
+		$scope.opcAdmin = false;
 	} else if ($location.$$url === '/torneios'){
 		$scope.torneios = 'active';
 	} else if ($location.$$url === '/apostas'){
@@ -46,8 +47,9 @@ angular.module('campoApp')
 		$scope.classificacao = 'active';
 	} else if ($location.$$url === '/minhaConta'){
 		$scope.minhaConta = 'active';
-	} else if ($location.$$url === '/adm'){
+	} else if ($location.$$url === '/admin'){
 		$scope.adm = 'active';
+		$scope.opcAdmin = true;
 	}
 
 	if(!$cookieStore.get('sessionId')) {
@@ -61,6 +63,7 @@ angular.module('campoApp')
 		$scope.classificacao = '';
 		$scope.minhaConta = '';
 		$scope.adm = '';
+		$scope.opcAdmin = false;
 
 		switch(opcao) {
 		    case 1:
@@ -79,6 +82,7 @@ angular.module('campoApp')
             	$scope.minhaConta = 'active';
               	break;
             case 6:
+            	$scope.opcAdmin = true;
             	$scope.adm = 'active';
               	break;
 		    default:
@@ -86,8 +90,36 @@ angular.module('campoApp')
 		}
 	};
 
+	$scope.abrir = function(){
+  		$scope.aberto = true;
+  	};
+
+  	$scope.fechar = function(){
+  		$scope.aberto = false;
+  	};
+
+  	$scope.abrirOpcao = function(opcao) {
+
+  		switch(opcao) {
+		     case 1:
+		      	$location.path('/admin/usuarios');
+		     	break;
+		     case 2:
+              		$location.path('/admin/times');
+      		    	break;
+		     case 3:
+             		$location.path('/admin/torneios');
+              		break;
+		     case 4:
+              		break;
+		     default:
+              		break;
+		}
+  	};
+
 	$scope.logout = function() {
 		$scope.inicio = 'active';
+		$scope.opcAdmin = false;
 		$scope.torneios = '';
 		$scope.apostas = '';
 		$scope.classificacao = '';
