@@ -8776,7 +8776,7 @@ body {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/main\.scss}line{font-family:\0000371}}
 .jumbotron .btn {
   font-size: 21px;
-  padding: 14px 24px;
+  /*padding: 14px 24px;*/
 }
 
 /* Supporting marketing content */

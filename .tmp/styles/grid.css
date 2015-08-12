@@ -30,7 +30,7 @@ html, body {
 .row {
   float: left;
   width: 100%;
-  margin: 0 0 25px 0;
+  /*margin: 0 0 25px 0; */
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/gabriel\/workspace\/apostas-front-end\/app\/styles\/grid\.scss}line{font-family:\0000333}}
