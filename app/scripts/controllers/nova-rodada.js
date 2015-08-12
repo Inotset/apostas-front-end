@@ -9,5 +9,7 @@
  */
 angular.module('campoApp')
   .controller('NovaRodadaCtrl', function ($scope) {
+
+  	
   	
   });
