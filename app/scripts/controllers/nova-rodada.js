@@ -8,7 +8,9 @@
  * Controller of the campoApp
  */
 angular.module('campoApp')
-  .controller('NovaRodadaCtrl', function ($scope) {
+  .controller('NovaRodadaCtrl', function (Rodada, $scope) {
+
+  	$scope.rodada = new Rodada();
 
   	
   	

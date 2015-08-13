@@ -9,9 +9,6 @@
  */
 angular.module('campoApp')
   .factory('novaRodada', function () {
-    // Service logic
-    // ...
-
     var meaningOfLife = 42;
 
     // Public API here

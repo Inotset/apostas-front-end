@@ -25,7 +25,8 @@ var app = angular.module('campoApp',
     'ui.bootstrap',
     'angularFileUpload',
     'facebook',
-    'satellizer'
+    'satellizer',
+    'ui.bootstrap.datepicker'
   ]);
 
   app.factory('ErrorInterceptor',  

@@ -28,3 +28,12 @@ campoServices.factory('Torneio', function ($resource) {
     );  
   return resource;
 });
+
+campoServices.factory('Rodada', function ($resource) {
+    var resource = $resource('rest/restricted/rodadas/:oid', 
+        {
+          oid : '@oid'
+        }
+    );  
+  return resource;
+});
