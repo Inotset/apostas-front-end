@@ -61,13 +61,13 @@ Caso o projeto seja criado com sucesso
 > grunt serve
 
 
-mkdir angularTeste
-cd angularTeste
-yo angular teste
+-mkdir angularTeste
+-cd angularTeste
+-yo angular teste
+- (npm update)
+-grunt
 
-grunt
-
-grunt serve
+-grunt serve
 
 ---------------------------------------------
 
